@@ -1,0 +1,10 @@
+<div class="results-block">
+    <%= render "layouts/messages" %>
+</div>
+<% if @stock %>
+    <div class="card results-block">
+        Company:<strong><%= @stock.name %></strong>
+        Ticker synbol:<strong> <%= @stock.ticker %></strong>
+        Price:<strong> <%= @stock.price %></strong>
+    </div>
+<% end %>
