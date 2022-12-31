@@ -19,4 +19,9 @@ class User < ApplicationRecord
   def reached_stocks_limit
       stocks.count >= 10
   end
+
+  def full_name
+    return "#{first_name} #{last_name}" if first_name || last_name
+    "Anonymous"
+  end
 end
