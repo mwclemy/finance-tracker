@@ -6,5 +6,6 @@
         Company:<strong><%= @stock.name %></strong>
         Ticker synbol:<strong> <%= @stock.ticker %></strong>
         Price:<strong> <%= @stock.price %></strong>
+        <%= link_to('Add Portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), method: :post, class: "btn btn-success") %>
     </div>
 <% end %>
