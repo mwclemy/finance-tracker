@@ -26,4 +26,18 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}" if first_name || last_name
     "Anonymous"
   end
+
+  def self.search(param)
+    param.strip!
+    results = where('email  LIKE :search OR 
+          first_name LIKE :search OR 
+          last_name LIKE :search', 
+          search: "%#{param}%")
+    return nil unless results
+    results
+  end
+
+  def except_current_user(users)
+    users.reject {|user| user.id == self.id }
+  end
 end

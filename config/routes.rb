@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'search_stock', to: 'stocks#search_stock'
   get 'my_friends', to: 'users#my_friends'
+  get 'search_friend', to: 'users#search'
 end
